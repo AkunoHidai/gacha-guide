@@ -13,13 +13,17 @@ app.get('/', (req, res) => {
 });
 // create a route to contact with FGO character
 app.route('/admin/FGO')
-    .post(contactController.createFGO)
+    .post(contactController.createFGO);
+// update or delete a character via id
+app.route('/admin/FGO/:id(\\d+)')
     .delete(contactController.deleteFGO)
     .put(contactController.fixFGO);
 
 // create a route to contact with Princess connect character
 app.route('/admin/princess-connect')
-    .post(contactController.createPR)
+    .post(contactController.createPR);
+// update or delete a character via id
+app.route('/admin/princess-connect/:id(\\d+)')
     .delete(contactController.deletePR)
     .put(contactController.fixPR);
 
